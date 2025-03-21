@@ -1,20 +1,21 @@
 void main() {
-  Person man1 = Person('Peter', 23);
-  Person woman1 = Person('Inga', 25);
-  Spouses spouses1 = Spouses(man1, woman1);
-  print('Eheleute ${spouses1.wife.name} und ${spouses1.husband.name}');
+  Author author = Author('Peter Schmitz', 1990);
+  Book book = Book(author, 'Superroman');
+  print(
+    'Buch: ${book.title} von ${book.author.name} (Geburtsjahr: ${book.author.birthYear})',
+  );
 }
 
-class Person {
+class Author {
   String name;
-  int alter;
+  int birthYear;
 
-  Person(this.name, this.alter);
+  Author(this.name, this.birthYear);
 }
 
-class Spouses {
-  Person husband;
-  Person wife;
+class Book {
+  Author author;
+  String title;
 
-  Spouses(this.husband, this.wife);
+  Book(this.author, this.title);
 }
